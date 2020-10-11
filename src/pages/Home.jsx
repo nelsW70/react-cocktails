@@ -52,7 +52,3 @@ export default function Home() {
     </main>
   );
 }
-
-// https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
-
-// https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
