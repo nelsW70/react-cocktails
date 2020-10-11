@@ -1,11 +1,25 @@
 import React from 'react';
-
-// import pages
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// pages
 import Home from './pages/Home';
 import Error from './pages/Error';
 import About from './pages/About';
 import SingleCocktail from './pages/SingleCocktail';
 
 export default function App() {
-  return <h1>app component</h1>;
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+        <Route path="*">
+          <Error />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
