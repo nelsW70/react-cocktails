@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CocktailList from '../components/CocktailList';
 import SearchForm from '../components/SearchForm';
 
@@ -7,6 +7,12 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState('a');
   const [cocktails, setCocktails] = useState([]);
 
+  useEffect(() => {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
+      .then(response => response.json())
+      .then(data => console.log(data));
+  }, []);
+
   return (
     <main>
       <SearchForm setSearchTerm={setSearchTerm} />
@@ -14,3 +20,7 @@ export default function Home() {
     </main>
   );
 }
+
+// https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+
+// https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
