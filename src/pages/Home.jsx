@@ -8,10 +8,12 @@ export default function Home() {
   const [cocktails, setCocktails] = useState([]);
 
   useEffect(() => {
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
+    fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
+    )
       .then(response => response.json())
-      .then(data => console.log(data));
-  }, []);
+      .then(data => setCocktails(data.drinks));
+  }, [searchTerm]);
 
   return (
     <main>
