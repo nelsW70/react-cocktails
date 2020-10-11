@@ -9,7 +9,7 @@ export default function CocktailList({ cocktails, loading }) {
     return <h2 className="section-title">No cocktails matched your search</h2>;
   }
   return (
-    <section className="section">
+    <section>
       <h2 className="section-title">cocktails</h2>
       <div className="cocktails-center">
         {cocktails.map(item => {
